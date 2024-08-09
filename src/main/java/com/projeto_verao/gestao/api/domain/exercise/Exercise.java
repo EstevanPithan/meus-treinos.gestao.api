@@ -1,10 +1,12 @@
 package com.projeto_verao.gestao.api.domain.exercise;
 
+import com.projeto_verao.gestao.api.domain.musclegroup.MuscleGroup;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,7 +21,14 @@ public class Exercise {
 
     private String name;
     private String description;
-    private String muscleGroup;
+
+    @ManyToMany
+    @JoinTable(
+            name = "exercise_muscle_group",
+            joinColumns = @JoinColumn(name = "exercise_id"),
+            inverseJoinColumns = @JoinColumn(name = "muscle_group_id")
+    )
+    private List<MuscleGroup> muscleGroups;
 
     @ManyToOne
     @JoinColumn(name = "equipment_id")

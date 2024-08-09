@@ -26,5 +26,5 @@ public class TrainingExercise {
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
-    private int order; // order of the exercise in the training
+    private int order;
 }
