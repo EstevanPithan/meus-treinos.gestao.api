@@ -27,4 +27,6 @@ public class TrainingExercise {
     private Exercise exercise;
 
     private int order;
+    private int sets;
+    private int repetitions;
 }
