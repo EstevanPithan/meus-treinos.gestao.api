@@ -1,27 +1,22 @@
 package com.projeto_verao.gestao.api.domain.training;
 
+import com.projeto_verao.gestao.api.domain.baseentity.BaseEntity;
 import com.projeto_verao.gestao.api.domain.exercise.Exercise;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "trainings")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Training {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
-
-    private String name;
-    private String description;
-
+@EqualsAndHashCode(callSuper = true)
+public class Training extends BaseEntity {
     @ManyToMany
     @JoinTable(
             name = "training_exercises",
