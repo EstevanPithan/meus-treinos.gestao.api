@@ -1,4 +1,4 @@
-package com.projeto_verao.gestao.api.domain.baseentity;
+package com.projeto_verao.gestao.api.domain.entity.baseentity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
